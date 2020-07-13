@@ -2,6 +2,7 @@ package cn.liyi.springcloudx.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * @Classname R
@@ -10,6 +11,7 @@ import lombok.Data;
  * @Created by liyi
  */
 @Data
+@Accessors(chain = true)
 @AllArgsConstructor
 public class R<T> {
 

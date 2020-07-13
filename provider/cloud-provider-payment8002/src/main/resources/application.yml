@@ -1,5 +1,5 @@
 server:
-  port: 8001
+  port: 8002
 
 spring:
   application:
@@ -11,6 +11,17 @@ spring:
     username: root
     password: 123456
 
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+  instance:
+    instance-id: payment8002
+    prefer-ip-address: true
+
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: cn.liyi.*.entity
+
