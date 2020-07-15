@@ -13,5 +13,10 @@ eureka:
     #自己就是注册中心
     fetch-registry: false
     service-url:
-      #交互地址
+      #交互地址 集群模式
       defaultZone: http://eureka7002.com:7002/eureka/,http://eureka7003.com:7003/eureka/
+      #单机模式
+#      defaultZone: http://eureka7001.com:7001/eureka/
+  server:
+    enable-self-preservation: false #自我保护功能
+    eviction-interval-timer-in-ms: 2000

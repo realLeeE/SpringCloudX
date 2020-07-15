@@ -2,12 +2,18 @@ package cn.liyi.springcloudx.controller;
 
 import cn.liyi.springcloudx.entity.Payment;
 import cn.liyi.springcloudx.entity.R;
+import cn.liyi.springcloudx.lb.LoadBalancer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
+
+import java.net.URI;
+import java.util.List;
 
 /**
  * @Classname OrderController
@@ -24,6 +30,10 @@ public class OrderController {
 
     @Autowired
     private RestTemplate restTemplate;
+    @Autowired
+    private LoadBalancer LoadBalancer;
+    @Autowired
+    private DiscoveryClient discoveryClient;
 
     @GetMapping(value = "/consumer/payment/create")
     public R<Boolean> create(Payment payment) {
@@ -45,5 +55,16 @@ public class OrderController {
         }
     }
 
+    @GetMapping(value = "/lb")
+    public String getLB() {
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        if (null == instances || instances.size() <= 0) {
+            return null;
+        }
+        ServiceInstance instance = LoadBalancer.instance(instances);
+        URI uri = instance.getUri();
+
+        return restTemplate.getForObject(uri + "/pay/payment/lb", String.class);
+    }
 
 }

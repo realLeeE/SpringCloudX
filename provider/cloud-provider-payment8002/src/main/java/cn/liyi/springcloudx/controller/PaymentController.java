@@ -39,4 +39,9 @@ public class PaymentController {
         return new R<Payment>(byId).setMsg("port:" + servicePort);
     }
 
+    @GetMapping(value = "lb")
+    public String getLB(){
+        return servicePort;
+    }
+
 }

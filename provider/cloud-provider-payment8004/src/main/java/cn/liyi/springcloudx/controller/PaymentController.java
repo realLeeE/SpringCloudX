@@ -65,9 +65,4 @@ public class PaymentController {
         return new R<Void>();
     }
 
-    @GetMapping(value = "lb")
-    public String getLB(){
-        return servicePort;
-    }
-
 }

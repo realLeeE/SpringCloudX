@@ -2,22 +2,22 @@ package cn.liyi.springcloudx;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
+import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
- * @Classname PaymentMain8001
- * @Description 支付8001主进程
- * @Date 2020/7/9 9:32
+ * @Classname OrderOpenFeignMain80
+ * @Description TODO
+ * @Date 2020/7/9 11:01
  * @Created by liyi
  */
 @SpringBootApplication
 @EnableEurekaClient
-@EnableDiscoveryClient
-public class PaymentMain8001 {
+@EnableFeignClients
+public class OrderOpenFeignMain80 {
 
     public static void main(String[] args) {
-        SpringApplication.run(PaymentMain8001.class, args);
+        SpringApplication.run(OrderOpenFeignMain80.class, args);
     }
 
 }
