@@ -6,3 +6,4 @@
 /provider/cloud-provider-payment8002/target
 /register/cloud-eureka-server7001/target
 /register/cloud-eureka-server7002/target
+*/target
