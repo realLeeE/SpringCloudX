@@ -22,10 +22,13 @@ public class OrderController {
     @Autowired
     private PaymentFeignService paymentFeignService;
 
-    @GetMapping(value = "/consumer/pay/payment")
+    @GetMapping(value = "/consumer/order/payment")
     public R<Payment> get(Long id) {
         return paymentFeignService.get(id);
     }
 
-
+    @GetMapping(value = "/consumer/order/timeout")
+    public R<String> timeOut() {
+        return new R<>(paymentFeignService.timeOut());
+    }
 }

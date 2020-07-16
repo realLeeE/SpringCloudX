@@ -21,4 +21,7 @@ public interface PaymentFeignService {
     @GetMapping(value = "/pay/payment", consumes = MediaType.ALL_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     R<Payment> get(@RequestParam("id") Long id);
 
+    @GetMapping(value = "/pay/payment/timeout", consumes = MediaType.ALL_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    String timeOut();
+
 }
