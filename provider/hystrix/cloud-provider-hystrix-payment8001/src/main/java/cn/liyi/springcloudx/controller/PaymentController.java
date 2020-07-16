@@ -39,4 +39,11 @@ public class PaymentController {
         return new R<>(r);
     }
 
+    @GetMapping(value = "circuit/{id}")
+    public R<String> paymentCircuitBreaker(@PathVariable("id") Long id) {
+        String s = paymentService.paymentCircuitBreaker(id);
+        log.info(s);
+        return new R<>(s);
+    }
+
 }
