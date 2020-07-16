@@ -15,7 +15,7 @@ import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 public class OrderMain80 {
 
     public static void main(String[] args) {
-        SpringApplication.run(OrderRibbonMain80.class, args);
+        SpringApplication.run(OrderMain80.class, args);
     }
 
 }
