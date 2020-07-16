@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: cloud-order-feign-service
+    name: cloud-order-feign-hystrix-service
 
 eureka:
   client:
@@ -15,8 +15,12 @@ eureka:
     instance-id: order80
 
 ribbon:
-  ReadTimeout: 5000
-  ConnectTimeout: 5000
+  ReadTimeout: 3000
+  ConnectTimeout: 3000
+
+feign:
+  hystrix:
+    enabled: true
 
 logging:
   level:

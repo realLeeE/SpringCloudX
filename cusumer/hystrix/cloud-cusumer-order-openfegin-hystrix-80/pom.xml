@@ -9,7 +9,7 @@
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>cloud-cusumer-order-openfegin-80</artifactId>
+    <artifactId>cloud-cusumer-order-openfegin-hystrix-80</artifactId>
 
     <dependencies>
         <dependency>
@@ -29,10 +29,15 @@
             <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+
         <dependency>
             <groupId>cn.liyi</groupId>
             <artifactId>cloud-api-commons</artifactId>

@@ -13,11 +13,13 @@
         <module>cloud-cusumer-order-80</module>
         <module>cusumer/cloud-cusumer-order-ribbon-80</module>
         <module>cusumer/cloud-cusumer-order-openfegin-80</module>
+        <module>cusumer/hystrix/cloud-cusumer-order-openfegin-hystrix-80</module>
         <module>cloud-api-commons</module>
         <module>provider/cloud-provider-payment8001</module>
         <module>provider/cloud-provider-payment8002</module>
         <module>provider/cloud-provider-payment8004</module>
         <module>provider/cloud-provider-payment8006</module>
+        <module>provider/hystrix/cloud-provider-hystrix-payment8001</module>
         <module>register/cloud-eureka-server7001</module>
         <module>register/cloud-eureka-server7002</module>
         <module>register/cloud-eureka-server7003</module>
