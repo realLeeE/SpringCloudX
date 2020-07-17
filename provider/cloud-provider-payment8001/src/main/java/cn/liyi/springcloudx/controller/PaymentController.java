@@ -41,8 +41,8 @@ public class PaymentController {
         return new R<Boolean>().setMsg("port:" + servicePort);
     }
 
-    @GetMapping(consumes = MediaType.ALL_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public R<Payment> get(Long id) {
+    @GetMapping(value = "get", consumes = MediaType.ALL_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public R<Payment> get(@RequestParam(value = "id") Long id) {
         Payment byId = paymentService.getById(id);
         return new R<Payment>(byId).setMsg("port:" + servicePort);
     }
@@ -66,13 +66,13 @@ public class PaymentController {
     }
 
     @GetMapping(value = "lb")
-    public String getLB(){
+    public String getLB() {
         return servicePort;
     }
 
 
     @GetMapping(value = "/timeout")
-    public String timeOut(){
+    public String timeOut() {
         try {
             Thread.sleep(3000);
         } catch (InterruptedException e) {

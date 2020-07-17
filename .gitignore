@@ -6,8 +6,10 @@
 /provider/cloud-provider-payment8002/target
 /register/cloud-eureka-server7001/target
 /register/cloud-eureka-server7002/target
-*/target
+target/
 /consumer/cloud-consumer-order-openfeign-80/target/
 /consumer/cloud-consumer-order-ribbon-80/target/
 /consumer/hystrix/cloud-consumer-hystrix-dashboard-9001/target/
 /consumer/hystrix/cloud-consumer-order-openfeign-hystrix-80/target/
+.idea/
+*.iml
