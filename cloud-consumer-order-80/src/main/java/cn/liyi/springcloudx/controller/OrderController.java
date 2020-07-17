@@ -32,7 +32,7 @@ public class OrderController {
 
     @GetMapping(value = "/consumer/pay/payment")
     public R<Payment> get(Long id) {
-        return restTemplate.getForObject(PAYMENT_URL + "/pay/payment?id=" + id, R.class);
+        return restTemplate.getForObject(PAYMENT_URL + "/pay/payment/get?id=" + id, R.class);
     }
 
     @GetMapping(value = "/consumer/pay/payment/getEntity")
