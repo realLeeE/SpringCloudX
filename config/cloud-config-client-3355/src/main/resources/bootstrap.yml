@@ -1,0 +1,32 @@
+server:
+  port: 3355
+
+spring:
+  application:
+    name: cloud-config-client
+  cloud:
+    config:
+      # http://config3344.com:3344/master/config-dev.yml
+      label: master
+      name: config
+      profile: dev
+      uri: http://config3344.com:3344
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka,http://eureka7003.com:7003/eureka
+  instance:
+    instance-id: cloud-config-client
+    prefer-ip-address: true
+    lease-renewal-interval-in-seconds: 1 #心态间隔时间
+    lease-expiration-duration-in-seconds: 2 #心跳等待时间
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"

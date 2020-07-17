@@ -13,3 +13,4 @@ target/
 /consumer/hystrix/cloud-consumer-order-openfeign-hystrix-80/target/
 .idea/
 *.iml
+/.project
