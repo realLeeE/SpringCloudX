@@ -9,3 +9,5 @@ https://www.bilibili.com/video/BV18E411x7eT?p=77
 5. gateway 概念: route  predicate filter
 6. bootstrap.yml 优先级高于 application.yml
 7. @RefreshScope 配置之后需要手动刷新配置 curl -X POST http://localhost:3355/actuator/refresh
+8. bus 刷新center配置中心: curl -X POST http://localhost:3344/actuator/bus-refresh
+9. bus 定点刷新某一个配置: curl -X POST http://localhost:{配置中心端口}/actuator/bus-refresh/{destination}
