@@ -35,6 +35,8 @@
         <module>alibaba/provider/cloud-alibaba-provider-payment-9002</module>
         <module>alibaba/consumer/cloud-alibaba-consumer-order-83</module>
         <module>alibaba/config/cloud-alibaba-config-client-3377</module>
+        <module>alibaba/sentinel/cloud-alibaba-csentinel-servers-8401</module>
+        <module>alibaba/cloudalibaba-sentinel-service8401</module>
     </modules>
 
     <!--统一管理jar包版本-->
