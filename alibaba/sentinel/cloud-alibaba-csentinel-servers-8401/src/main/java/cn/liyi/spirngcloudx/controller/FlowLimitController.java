@@ -14,18 +14,15 @@ import org.springframework.web.bind.annotation.RestController;
  */
 @RestController
 @Slf4j
-public class SentinelController {
+public class FlowLimitController {
 
-    @Value("${server.port}")
-    private String port;
-
-    @GetMapping(value = "/test/a")
+    @GetMapping(value = "/testA")
     private R<String> testA() {
         log.info("aaaaaaaaaaaaaaaa");
         return new R<>("AAAA");
     }
 
-    @GetMapping(value = "/test/b")
+    @GetMapping(value = "/testB")
     private R<String> testB() {
         log.info("bbbbbbbbbbbbbbbbbbbb");
         return new R<>("BBBB");
