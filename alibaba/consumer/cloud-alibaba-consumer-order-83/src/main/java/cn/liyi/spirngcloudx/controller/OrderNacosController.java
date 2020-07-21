@@ -1,12 +1,11 @@
 package cn.liyi.spirngcloudx.controller;
 
+import cn.liyi.spirngcloudx.service.PaymentFeignService;
 import cn.liyi.springcloudx.entity.R;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.client.RestTemplate;
 
 /**
  * @Classname OrderNacosController
@@ -15,17 +14,16 @@ import org.springframework.web.client.RestTemplate;
  * @Created by liyi
  */
 @RestController
+@Slf4j
 public class OrderNacosController {
 
-    @Value("${service-url.nacos-user-service}")
-    private String serviceUrl;
-
     @Autowired
-    private RestTemplate restTemplate;
+    private PaymentFeignService paymentFeignService;
 
-    @GetMapping(value = "/consumer/payment/nacos/{id}")
-    public R<String> paymentInfo(@PathVariable("id") Long id) {
-        return this.restTemplate.getForObject(serviceUrl + "/payment/nacos/" + id, R.class);
+    @GetMapping(value = "/consumer")
+    public R<String> paymentInfo(Long id) {
+        log.info(Thread.currentThread().getName()+"   /consumer");
+        return paymentFeignService.echo(id.toString());
     }
 
 }

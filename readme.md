@@ -45,7 +45,7 @@
     2.2.x 版本适用于 Spring Boot 2.2.x
     ```
 
-2. nacos整合了ribbon 自带负载均衡(策略为轮询)
+2. nacos整合了ribbon 自带负载均衡
 
 3. nacos支持AP和CP模式切换
 
@@ -55,5 +55,10 @@
     ${spring.application.name}-${spring.profile.active}.${spring.cloud.nacos.config.file-extension}
     nacos-config-client-dev.yml
     ```
+    
 5. nacos config 自带配置刷新功能
+
+6. sentinel  流控 降级 热点 熔断 持久化   ---->>>类似（Hystrix）
+
+7. sentinel  排坑 监控发现不了http://localhost/hello/def/123 这样多级的路径,http://localhost/hello 单级路径可以发现，目前暂未发现原因
 

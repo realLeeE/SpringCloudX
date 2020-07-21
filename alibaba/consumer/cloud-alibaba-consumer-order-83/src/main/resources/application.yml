@@ -8,6 +8,16 @@ spring:
     nacos:
       discovery:
         server-addr: http://localhost:8848
+    sentinel:
+      transport:
+        dashboard: localhost:8080 #配置Sentinel dashboard地址
+        port: 8730
 
 service-url:
   nacos-user-service: http://nacos-payment-provider
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
