@@ -12,6 +12,8 @@ spring:
       transport:
         dashboard: localhost:8080 #配置Sentinel dashboard地址
 #        port: 8719
+      filter:
+        url-patterns: /** #这里巨坑,默认配置只能拦截到1级目录
 
 management:
   endpoints:

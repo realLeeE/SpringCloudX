@@ -62,3 +62,5 @@
 
 7. sentinel  排坑 监控发现不了http://localhost/hello/def/123 这样多级的路径,http://localhost/hello 单级路径可以发现，目前暂未发现原因
 
+    > https://github.com/alibaba/Sentinel/issues/1386   找到了解决方案
+
