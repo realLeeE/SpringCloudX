@@ -1,5 +1,6 @@
 package cn.liyi.spirngcloudx.controller;
 
+import cn.liyi.spirngcloudx.config.CustomerBlockHandler;
 import cn.liyi.springcloudx.entity.Payment;
 import cn.liyi.springcloudx.entity.R;
 import com.alibaba.csp.sentinel.annotation.SentinelResource;
@@ -30,11 +31,11 @@ public class RateLimitController {
     }
 
 
-//    @GetMapping("/rateLimit/customerBlockHandler")
-//    @SentinelResource(value = "customerBlockHandler",
-//            blockHandlerClass = CustomerBlockHandler.class,
-//            blockHandler = "handlerException2")
-//    public R<?> customerBlockHandler() {
-//        return new R<>(200, "按客戶自定义", new Payment(2020L, "serial003"));
-//    }
+    @GetMapping("/rateLimit/customerBlockHandler")
+    @SentinelResource(value = "customerBlockHandler",
+            blockHandlerClass = CustomerBlockHandler.class,
+            blockHandler = "handlerException2")
+    public R<?> customerBlockHandler() {
+        return new R<>(200, "按客戶自定义", new Payment(2020L, "serial003"));
+    }
 }
