@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * @Created by liyi
  */
 @Component
-@FeignClient(value = "cloud-seata-storage")
+@FeignClient(value = "storage-service")
 public interface StorageApi {
 
 

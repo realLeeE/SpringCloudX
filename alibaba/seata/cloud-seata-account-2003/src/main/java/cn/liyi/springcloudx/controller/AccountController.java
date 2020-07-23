@@ -52,6 +52,6 @@ public class AccountController implements AccountApi {
     public R<?> subtractMoney(@RequestBody SubtractMoneyRequest request) {
         log.info("-------------- subtractMoney SubtractMoneyRequest:{}", request);
         Boolean success = accountService.subtractMoney(request.getMid(), request.getMoney());
-        return null;
+        return new R<>();
     }
 }

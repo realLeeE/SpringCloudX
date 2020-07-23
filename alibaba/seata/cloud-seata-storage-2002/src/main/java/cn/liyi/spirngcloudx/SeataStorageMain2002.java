@@ -12,7 +12,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @Created by liyi
  */
 @SpringBootApplication
-@EnableFeignClients
+@EnableFeignClients(basePackages = "cn.liyi.springcloudx.api")
 @EnableDiscoveryClient
 public class SeataStorageMain2002 {
 

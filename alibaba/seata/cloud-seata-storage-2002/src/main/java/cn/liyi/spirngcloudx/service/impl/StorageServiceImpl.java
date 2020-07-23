@@ -5,6 +5,7 @@ import cn.liyi.spirngcloudx.mapper.StorageMapper;
 import cn.liyi.spirngcloudx.service.StorageService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 /**
  * @Classname StorageServiceImpl
@@ -23,7 +24,12 @@ public class StorageServiceImpl extends ServiceImpl<StorageMapper, Storage> impl
      * @return
      */
     @Override
+    @Transactional
     public Boolean subtractStorage(Long productId, Integer num) {
-        return retBool(baseMapper.subtractStorage(productId, num));
+        boolean success = retBool(baseMapper.subtractStorage(productId, num));
+        if (!success) {
+            throw new RuntimeException("库存不足");
+        }
+        return success;
     }
 }

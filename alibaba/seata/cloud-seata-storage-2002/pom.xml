@@ -16,21 +16,15 @@
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-        <!--seata-->
+        <!-- 引入 Spring Cloud Alibaba Seata 相关依赖，使用 Seata 实现分布式事务，并实现对其的自动配置 -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
-            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
-            <exclusions>
-                <exclusion>
-                    <artifactId>seata-all</artifactId>
-                    <groupId>io.seata</groupId>
-                </exclusion>
-            </exclusions>
+            <artifactId>spring-cloud-alibaba-seata</artifactId>
         </dependency>
-        <dependency>
+        <dependency> <!-- 主要想使用 seata 1.3.0 版本 -->
             <groupId>io.seata</groupId>
-            <artifactId>seata-all</artifactId>
-            <version>0.9.0</version>
+            <artifactId>seata-spring-boot-starter</artifactId>
+            <version>1.3.0</version>
         </dependency>
         <!--feign-->
         <dependency>

@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
  * @Created by liyi
  */
 @Component
-@FeignClient(value = "cloud-seata-order")
+@FeignClient(value = "order-service")
 public interface OrderApi {
 
     /**

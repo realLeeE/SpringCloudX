@@ -9,6 +9,7 @@ import cn.liyi.springcloudx.api.model.request.SubtractMoneyRequest;
 import cn.liyi.springcloudx.api.model.request.SubtractStorageRequest;
 import cn.liyi.springcloudx.api.model.response.ProductResponse;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import io.seata.spring.annotation.GlobalTransactional;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +40,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
      * @return
      */
     @Override
+    @GlobalTransactional(name = "tc-creat-order", rollbackFor = Exception.class)
     public Boolean createOrder(Long userId, Long productId, Integer num) {
         // 查询商品价格库存等
         ProductResponse product = storageApi.get(productId).getData();

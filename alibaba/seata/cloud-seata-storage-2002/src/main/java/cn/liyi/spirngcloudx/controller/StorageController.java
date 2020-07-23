@@ -54,6 +54,6 @@ public class StorageController implements StorageApi {
     public R<?> subtractStorage(@RequestBody SubtractStorageRequest request) {
         log.info("-------------------- subtractStorage SubtractStorageRequest: {}", request);
         Boolean success = storageService.subtractStorage(request.getProductId(), request.getNum());
-        return success ? new R<>() : new R<>(444, "操作失败");
+        return new R<>();
     }
 }
